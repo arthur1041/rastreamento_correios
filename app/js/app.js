@@ -19,12 +19,18 @@ DomReady.ready(function () {
             return response.json();
         }).then(function (jsonResponse) {
             trackingResult.innerHTML = "";
-            jsonResponse.forEach(function (el) {
-                console.log(el);
+            try {
+                jsonResponse.forEach(function (el) {
+                    console.log(el);
+                    trackingResult.append(htd(`
+                        <div class="tracking-item">${el.dataHora} ${el.descricao} ${el.cidade} ${el.uf}</div>
+                    `));
+                });
+            } catch (error) {
                 trackingResult.append(htd(`
-                    <div class="tracking-item">${el.dataHora} ${el.descricao} ${el.cidade} ${el.uf}</div>
+                        <div class="tracking-item tracking-warning">Aguardando postagem pelo remetente.</div>
                 `));
-            });
+            }
         });
     }
 })
