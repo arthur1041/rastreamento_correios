@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,14 +9,18 @@
     <link rel="stylesheet" href="resources/css/main.css">
     <script src="app/js/domready.js"></script>
 </head>
+
 <body>
     <div class="container">
-        <input type="text" id="tracking-code">
-        <button id="btn-track">Buscar</button>
+        <form onload="return false">
+            <input type="text" name="tracking-code" id="tracking-code">
+            <button id="btn-track">Buscar</button>
+        </form>
         <div class="tracking-result">
 
         </div>
     </div>
     <script src="app/js/app.js"></script>
 </body>
+
 </html>
