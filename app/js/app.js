@@ -13,7 +13,7 @@ DomReady.ready(function () {
     trackingResult = document.querySelector(".tracking-result");
 
     trackingBtn.onclick = function () {
-        trackingCode = document.getElementById("tracking-code").value;
+        trackingCode = document.getElementById("tracking-code").value.toUpperCase();
 
         fetch("https://api.rastrearpedidos.com.br/api/rastreio/v1?codigo=" + trackingCode).then(function (response) {
             return response.json();
